@@ -1,0 +1,17 @@
+MongoDB
+To get MongoDB for your project, you can use our dedicated MongoDB image built on top of gitpod/workspace-base.
+
+Simply base your .gitpod.dockerfile on:
+
+language icon
+dockerfile
+
+FROM gitpod/workspace-mongodb
+
+Then start the MongoDB server by running this in a Terminal or in a .gitpod.yml command:
+
+language icon
+bash
+
+mkdir -p /workspace/data && mongod --dbpath /workspace/data
+Note: Storing MongoDB’s data inside /workspace ensures that it will get backed up and restored properly when you stop and restart a workspace, or share a snapshot.
